@@ -44,25 +44,25 @@ export default function DashboardPreview() {
                 <div className="space-y-4">
                   {[
                     {
-                      img: "https://randomuser.me/api/portraits/women/44.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764798781/istockphoto-1135081673-612x612_io9p4q.jpg",
                       name: "Sarah Johnson",
                       msg: "5m ago",
                       badge: "bg-green-500 text-green-800",
                     },
                     {
-                      img: "https://randomuser.me/api/portraits/men/32.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764799222/20572baabbf418db9cfb52c5026fdce1_knprb4.jpg",
                       name: "Mike Chen",
                       msg: "10m ago",
                       badge: "bg-green-500 text-green-800",
                     },
                     {
-                      img: "https://randomuser.me/api/portraits/women/65.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764798785/photo-1580489944761-15a19d654956_rjgvd2.jpg",
                       name: "Lisa Park",
                       msg: "15m ago",
                       badge: "bg-yellow-500 text-yellow-800",
                     },
                     {
-                      img: "https://randomuser.me/api/portraits/men/41.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764799169/close-up-upset-american-black-person_23-2148749582_ybnqyo.avif",
                       name: "David Kim",
                       msg: "49m ago",
                       badge: "bg-gray-500 text-gray-800",
@@ -73,13 +73,16 @@ export default function DashboardPreview() {
                       className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                     >
                       <div className="flex items-center gap-3">
-                        <Image
-                          src={agent.img}
-                          alt={agent.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full object-cover"
-                        />
+                        <div className="w-10 h-10 rounded-full overflow-hidden">
+                          <Image
+                            src={agent.img}
+                            alt={agent.name}
+                            width={40}
+                            height={40}
+                            loading="lazy"
+                            className="object-contain scale-100"
+                          />
+                        </div>
 
                         <p className="font-medium text-gray-900 text-sm">
                           {agent.name}
@@ -107,22 +110,22 @@ export default function DashboardPreview() {
                     {
                       name: "Ana Rodriguez",
                       satisfaction: 98,
-                      img: "https://randomuser.me/api/portraits/women/30.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764798781/images_fimmzn.jpg",
                     },
                     {
                       name: "Lisa Park",
                       satisfaction: 80,
-                      img: "https://randomuser.me/api/portraits/women/5.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764798953/pexels-photo-774909_r1dwov.jpg",
                     },
                     {
                       name: "David Kim",
                       satisfaction: 94,
-                      img: "https://randomuser.me/api/portraits/men/40.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764798954/slide-2_udumwa.png",
                     },
                     {
-                      name: "Rachel Lee",
+                      name: "Adam leon",
                       satisfaction: 70,
-                      img: "https://randomuser.me/api/portraits/women/13.jpg",
+                      img: "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764799416/rrrr_ovl2zd.avif",
                     },
                   ].map((agent, i) => (
                     <div
@@ -130,13 +133,16 @@ export default function DashboardPreview() {
                       className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                     >
                       <div className="flex items-center gap-3">
-                        <Image
-                          src={agent.img}
-                          alt={agent.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full object-cover"
-                        />
+                        <div className="w-10 h-10 rounded-full flex items-center justify-center overflow-hidden">
+                          <Image
+                            src={agent.img}
+                            alt={agent.name}
+                            width={40}
+                            height={40}
+                            loading="lazy"
+                            className="object-cover scale-110"
+                          />
+                        </div>
                         <p className="font-medium text-gray-900 text-sm">
                           {agent.name}
                         </p>
