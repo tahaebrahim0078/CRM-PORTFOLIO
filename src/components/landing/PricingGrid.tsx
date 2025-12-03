@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Check } from "lucide-react";
 import {
   HoverScale,
@@ -11,6 +10,7 @@ import {
 type Plan = {
   id: string;
   name: string;
+  subTitle?: string;
   price: string;
   features: string[];
   cta: string;
@@ -20,44 +20,68 @@ type Plan = {
 const plans: Plan[] = [
   {
     id: "basic",
-    name: "Basic",
-    price: "$9/mo",
-    features: ["Chat widget", "1 inbox", "Email support"],
+    name: "Starter",
+    subTitle: "Perfect for small teams",
+    price: "$29/mo",
+    features: [
+      "Chat widget",
+      "Up to 3 agents",
+      "1,000 conversations/month",
+      "Email support",
+      "Basic analytics",
+    ],
     cta: "Get started",
   },
   {
     id: "pro",
-    name: "Pro",
-    price: "$29/mo",
-    features: ["Multi-agent", "Unlimited inboxes", "Priority support"],
+    name: "Professional",
+    subTitle: "Great for growing businesses",
+
+    price: "$99/mo",
+    features: [
+      "Up to 10 agents",
+      "10,000 conversations/month",
+      "Advanced analytics",
+      "Priority support",
+      "Customizable chat widget ",
+      "AI chatbot included",
+    ],
     cta: "Start trial",
     popular: true,
   },
   {
     id: "enterprise",
     name: "Enterprise",
-    price: "Contact",
-    features: ["SLA", "Custom integrations", "Dedicated support"],
+    subTitle: "For large organizations",
+
+    price: "$299/mo",
+    features: [
+      "Unlimited agents",
+      "Unlimited conversations",
+      "Custom analytics",
+      "24/7 dedicated support",
+      "Custom integrations",
+    ],
     cta: "Contact sales",
   },
 ];
 
 export default function PricingGrid() {
   return (
-    <div className="grid md:grid-cols-3 gap-6">
-      <StaggerContainer>
+    <StaggerContainer>
+      <div className="grid md:grid-cols-3 gap-6">
         {plans.map((plan) => (
           <StaggerItem key={plan.id}>
             <HoverScale>
               <div
-                className={`bg-white rounded-2xl p-6 shadow-md border ${
+                className={`bg-white rounded-2xl   p-6 shadow-md border ${
                   plan.popular ? "border-indigo-300" : "border-transparent"
                 }`}
                 role="region"
                 aria-label={`${plan.name} plan`}
               >
                 <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-semibold text-gray-900">
+                  <h3 className="text-xl font-bold text-gray-900">
                     {plan.name}
                   </h3>
                   {plan.popular && (
@@ -66,6 +90,9 @@ export default function PricingGrid() {
                     </span>
                   )}
                 </div>
+                {plan.subTitle && (
+                  <p className="text-sm text-gray-500">{plan.subTitle}</p>
+                )}
                 <div className="mt-4">
                   <span className="text-3xl font-bold text-gray-900">
                     {plan.price}
@@ -83,10 +110,10 @@ export default function PricingGrid() {
 
                 <div className="mt-6">
                   <button
-                    className={`w-full ${
+                    className={`w-full cursor-pointer ${
                       plan.popular
-                        ? "bg-indigo-600 text-white"
-                        : "bg-gray-100 text-gray-900"
+                        ? "bg-gradient-to-br from-indigoCustom to-purpleCustom text-white"
+                        : "bg-[var(--color-footer)] text-white"
                     } px-4 py-2 rounded-lg font-semibold`}
                   >
                     {plan.cta}
@@ -96,7 +123,7 @@ export default function PricingGrid() {
             </HoverScale>
           </StaggerItem>
         ))}
-      </StaggerContainer>
-    </div>
+      </div>
+    </StaggerContainer>
   );
 }

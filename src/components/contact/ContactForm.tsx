@@ -14,10 +14,7 @@ interface ContactFormProps {
   formspreeId?: string;
 }
 
-export default function ContactForm({
-  onSubmit,
-  formspreeId = "YOUR_FORM_ID",
-}: ContactFormProps) {
+export default function ContactForm({ onSubmit }: ContactFormProps) {
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -118,7 +115,7 @@ export default function ContactForm({
                 onChange={handleChange}
                 required
                 placeholder="John Doe"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 bg-white"
+                className="w-full px-4 py-3 text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 bg-white"
               />
             </div>
 
@@ -138,7 +135,7 @@ export default function ContactForm({
                 onChange={handleChange}
                 required
                 placeholder="john@example.com"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 bg-white"
+                className="w-full px-4 py-3 text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 bg-white"
               />
             </div>
 
@@ -157,7 +154,7 @@ export default function ContactForm({
                 value={formState.company}
                 onChange={handleChange}
                 placeholder="Your Company"
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 bg-white"
+                className="w-full px-4 py-3 text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigoCustom bg-white"
               />
             </div>
 
@@ -177,7 +174,7 @@ export default function ContactForm({
                 required
                 placeholder="Tell us how we can help..."
                 rows={5}
-                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none bg-white"
+                className="w-full px-4 py-3 text-black rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none bg-white"
               />
             </div>
 
@@ -186,7 +183,7 @@ export default function ContactForm({
               <button
                 type="submit"
                 disabled={formState.isSubmitting}
-                className="w-full bg-purple-600 text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                className="w-full bg-linear-to-br from-indigoCustom to-purpleCustom cursor-pointer text-white py-3 rounded-lg font-semibold hover:bg-purple-700 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
               >
                 <Send className="w-5 h-5" />
                 {formState.isSubmitting ? "Sending..." : "Send Message"}

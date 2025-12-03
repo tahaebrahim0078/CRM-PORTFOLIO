@@ -31,4 +31,11 @@ body {
 @theme inline {
   --color-indigoCustom: #667EEA;
   --color-purpleCustom: #764BA2;
+   --color-greenCustom: #10b981;
+  --color-blueCustom: #6366f1;
+  --color-yellowCustom: #f59e0b;
+  --color-redCustom: #ef4444;
+  --color-indigoCustom: #667EEA;
+  --color-purpleCustom: #764BA2;
+  --color-footer: #1F2937;
 }

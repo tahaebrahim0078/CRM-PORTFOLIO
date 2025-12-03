@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/common/Navbar";
-
+import Image from "next/image";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
@@ -14,7 +14,26 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
+const leader = [
+  {
+    name: "Taha Ibrahim",
+    position: "Developer & CEO",
+    image:
+      "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764790784/WhatsApp_Image_2025-12-03_at_21.32.32_63aeea05_copy_huvosh.jpg",
+  },
+  {
+    name: "Amr Magdy",
+    position: "Developer & CEO",
+    image:
+      "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764790784/WhatsApp_Image_2025-12-03_at_21.32.32_a1dd7a56_copy_bl94my.jpg",
+  },
+  {
+    name: "Ahmed Atya",
+    position: "Developer & CEO",
+    image:
+      "https://res.cloudinary.com/dtf9brzuu/image/upload/v1764790784/WhatsApp_Image_2025-12-03_at_21.32.32_9b5a4592_copy_mfk2gc.jpg",
+  },
+];
 export default function AboutUsPage() {
   return (
     <>
@@ -55,7 +74,7 @@ export default function AboutUsPage() {
               </div>
               <div className="bg-linear-to-br from-purple-100 to-blue-100 rounded-2xl p-12 h-72 flex items-center justify-center">
                 <div className="text-center">
-                  <p className="text-6xl font-bold text-purple-600 mb-2">
+                  <p className="text-6xl font-bold text-purpleCustom  mb-2">
                     +500K
                   </p>
                   <p className="text-gray-700">Conversations Powered Daily</p>
@@ -113,17 +132,23 @@ export default function AboutUsPage() {
               Our team brings together decades of experience in customer
               service, AI, and enterprise software.
             </p>
-            <div className="grid md:grid-cols-4 gap-8">
-              {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="text-center">
-                  <div
-                    className="w-24 h-24 bg-linear-to-br from-purple-400 to-blue-500 rounded-full mx-auto mb-4"
-                    aria-hidden="true"
-                  />
+            <div className="grid md:grid-cols-3 gap-8">
+              {leader.map((member) => (
+                <div key={member.name} className="text-center">
+                  <div className="w-24 h-24 mx-auto mb-4 relative">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="rounded-full object-cover"
+                      sizes="96px" // بما أن parent 24*24 (96px)
+                    />
+                  </div>
+
                   <h3 className="text-lg font-bold text-gray-900">
-                    Team Member
+                    {member.name}
                   </h3>
-                  <p className="text-gray-600 text-sm">Leadership Position</p>
+                  <p className="text-gray-600 text-sm">{member.position}</p>
                 </div>
               ))}
             </div>
@@ -131,11 +156,11 @@ export default function AboutUsPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 md:py-24 bg-linear-to-br from-purple-600 to-blue-600 text-white">
+        <section className="py-16 md:py-24 bg-linear-to-br from-indigoCustom to-purpleCustom text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-4 gap-8 text-center">
               <div>
-                <p className="text-4xl font-bold mb-2">2020</p>
+                <p className="text-4xl font-bold mb-2">2025</p>
                 <p className="text-purple-100">Founded</p>
               </div>
               <div>
@@ -165,14 +190,14 @@ export default function AboutUsPage() {
             </p>
             <div className="flex gap-4 justify-center">
               <Link
-                href="/signup"
-                className="bg-purple-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-purple-700 transition focus:outline-none focus:ring-2 focus:ring-purple-600"
+                href="https://crm-dashboard-orcin.vercel.app/"
+                className="bg-linear-to-br from-indigoCustom to-purpleCustom text-white px-8 py-3 rounded-lg font-bold hover:bg-purple-700 transition focus:outline-none focus:ring-2 focus:ring-purple-600"
               >
                 Start Free Trial
               </Link>
               <Link
                 href="/"
-                className="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-lg font-bold hover:bg-purple-50 transition focus:outline-none focus:ring-2 focus:ring-purple-600"
+                className="border-2 border-indigoCustom text-indigoCustom px-8 py-3 rounded-lg font-bold hover:bg-purple-50 transition focus:outline-none focus:ring-2 focus:ring-purple-600"
               >
                 Back Home
               </Link>

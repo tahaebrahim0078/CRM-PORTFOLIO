@@ -8,12 +8,11 @@ import {
   PieChart,
   Pie,
   Cell,
-  XAxis,
-  YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+import { FaStar } from "react-icons/fa6";
 
 const chatTrends = [
   { date: "Mon", volume: 2400 },
@@ -39,12 +38,24 @@ const responseTimes = [
   { name: ">5 min", value: 500 },
 ];
 
-const COLORS = ["#10b981", "#6366f1", "#f59e0b", "#ef4444"];
+const COLORS = [
+  "var(--color-greenCustom)",
+  "var(--color-blueCustom)",
+  "var(--color-yellowCustom)",
+  "var(--color-redCustom)",
+];
 
 const keyMetrics = [
   { label: "First Response Time", value: "2.5m", trend: "↑ 12%" },
   { label: "Resolution Rate", value: "94%", trend: "↑ 8%" },
   { label: "Customer Satisfaction", value: "4.8/5", trend: "↑ 4.5%" },
+];
+
+const issues = [
+  { name: "Billing Issues", percentage: 34 },
+  { name: "Technical Support", percentage: 28 },
+  { name: "Account Settings", percentage: 22 },
+  { name: "Billing Questions", percentage: 16 },
 ];
 
 export default function AnalyticsSection() {
@@ -89,14 +100,13 @@ export default function AnalyticsSection() {
             <h3 className="font-bold text-gray-900 mb-6">Chat Volume Trends</h3>
             <ResponsiveContainer width="100%" height={300}>
               <LineChart data={chatTrends}>
-                <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="date" stroke="#6b7280" />
-                <YAxis stroke="#6b7280" />
+                <CartesianGrid strokeDasharray="3 3" stroke="#c5c5c5ff" />
+
                 <Tooltip />
                 <Line
                   type="monotone"
                   dataKey="volume"
-                  stroke="#8b5cf6"
+                  stroke="var(--color-start)"
                   strokeWidth={2}
                   dot={false}
                 />
@@ -109,13 +119,20 @@ export default function AnalyticsSection() {
             <h3 className="font-bold text-gray-900 mb-6">
               Customer Satisfaction
             </h3>
+
             <ResponsiveContainer width="100%" height={300}>
               <BarChart data={satisfactionData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                <XAxis dataKey="name" stroke="#6b7280" />
-                <YAxis stroke="#6b7280" />
                 <Tooltip />
-                <Bar dataKey="value" fill="#10b981" />
+
+                <Bar dataKey="value">
+                  {satisfactionData.map((entry, index) => (
+                    <Cell
+                      key={`cell-${index}`}
+                      fill={COLORS[index % COLORS.length]}
+                    />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -154,12 +171,7 @@ export default function AnalyticsSection() {
           <div className="bg-white rounded-xl border border-gray-200 p-6">
             <h3 className="font-bold text-gray-900 mb-6">Top Issues</h3>
             <div className="space-y-4">
-              {[
-                { name: "Billing Issues", percentage: 34 },
-                { name: "Technical Support", percentage: 28 },
-                { name: "Account Settings", percentage: 22 },
-                { name: "Billing Questions", percentage: 16 },
-              ].map((issue, i) => (
+              {issues.map((issue, i) => (
                 <div key={i}>
                   <div className="flex justify-between mb-2">
                     <p className="text-sm font-medium text-gray-700">
@@ -171,8 +183,11 @@ export default function AnalyticsSection() {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2">
                     <div
-                      className="bg-gradient-to-r from-purple-500 to-blue-500 h-2 rounded-full"
-                      style={{ width: `${issue.percentage}%` }}
+                      className={` h-2 rounded-full`}
+                      style={{
+                        width: `${issue.percentage}%`,
+                        backgroundColor: COLORS[i % COLORS.length],
+                      }}
                     />
                   </div>
                 </div>
@@ -188,10 +203,22 @@ export default function AnalyticsSection() {
                 {
                   label: "First Response Time",
                   value: "2.5m",
-                  change: "↑ 12%",
+                  change: "faster 12%",
                 },
-                { label: "Resolution Rate", value: "94%", change: "↑ 8%" },
-                { label: "Satisfaction", value: "4.8/5", change: "↑ 4.5%" },
+                {
+                  label: "Resolution Rate",
+                  value: "94%",
+                  change: "increase 8%",
+                },
+                {
+                  label: "Satisfaction",
+                  value: "4.8/5",
+                  change: (
+                    <span className="flex items-center gap-1 text-yellow-500 font-medium text-sm">
+                      <FaStar /> 4.5%
+                    </span>
+                  ),
+                },
               ].map((metric, i) => (
                 <div
                   key={i}

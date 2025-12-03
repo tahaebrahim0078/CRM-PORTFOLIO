@@ -13,36 +13,48 @@ const features = [
     title: "Easy Chat Integration",
     description:
       "Seamlessly embed our chat widget into any website or application with just a few lines of code.",
+    color: "text-blue-500",
+    bg: "bg-blue-100",
   },
   {
     icon: Users,
     title: "Multi-Agent Dashboard",
     description:
       "Manage unlimited agents for your business with real-time collaboration and presence awareness.",
+    color: "text-green-500",
+    bg: "bg-green-100",
   },
   {
     icon: TrendingUp,
     title: "Advanced Analytics",
     description:
       "Track performance metrics, customer satisfaction, and business metrics with comprehensive reporting.",
+    color: "text-purple-500",
+    bg: "bg-purple-100",
   },
   {
     icon: Zap,
     title: "AI-Powered Responses",
     description:
       "Intelligent chatbot with machine learning capabilities to handle common customer queries.",
+    color: "text-yellow-500",
+    bg: "bg-yellow-100",
   },
   {
     icon: Palette,
     title: "Full Customization",
     description:
       "Customize colors, themes, branding to match your business identity perfectly.",
+    color: "text-pink-500",
+    bg: "bg-pink-100",
   },
   {
     icon: Lock,
     title: "Enterprise Security",
     description:
       "Bank-level encryption, GDPR compliance, and data protection for peace of mind.",
+    color: "text-red-500",
+    bg: "bg-red-100",
   },
 ];
 
@@ -70,8 +82,10 @@ export default function FeaturesSection() {
                 key={index}
                 className="p-8 rounded-xl bg-gray-50 border border-gray-200 hover:border-purple-300 hover:shadow-lg transition"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-blue-500 rounded-lg flex items-center justify-center mb-4">
-                  <Icon className="w-6 h-6 text-white" />
+                <div
+                  className={`w-12 h-12 rounded-lg flex items-center justify-center mb-4 ${feature.bg}`}
+                >
+                  <Icon className={`w-6 h-6 ${feature.color}`} />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
                   {feature.title}

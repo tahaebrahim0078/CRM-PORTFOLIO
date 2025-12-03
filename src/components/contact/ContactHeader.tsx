@@ -2,7 +2,7 @@ import { FadeIn } from "@/components/common/Animations";
 
 export default function ContactHeader() {
   return (
-    <div className="bg-gradient-to-br from-purpleCustom to-indigoCustom text-white py-16 md:py-24">
+    <div className="bg-gradient-to-br from-purpleCustom to-indigoCustom text-white py-14 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn direction="up">
           <div className="text-center">

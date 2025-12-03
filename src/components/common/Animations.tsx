@@ -38,6 +38,7 @@ export function FadeIn({
         duration,
         delay,
       }}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>
@@ -55,6 +56,7 @@ export function ScaleIn({ children, delay = 0 }: ScaleInProps) {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 0.5, delay }}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>
@@ -71,7 +73,8 @@ export function HoverScale({ children, scale = 1.03 }: HoverScaleProps) {
     <motion.div
       whileHover={{ scale }}
       whileTap={{ scale: 0.98 }}
-      transition={{ type: "spring", stiffness: 400, damping: 10 }}
+      transition={{ stiffness: 200, damping: 10 }}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>
@@ -84,8 +87,16 @@ interface CountUpProps {
 
 export function CountUp({ value }: CountUpProps) {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <motion.span initial={{ y: 10 }} animate={{ y: 0 }}>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      suppressHydrationWarning
+    >
+      <motion.span
+        initial={{ y: 10 }}
+        animate={{ y: 0 }}
+        suppressHydrationWarning
+      >
         {value}
       </motion.span>
     </motion.div>
@@ -114,6 +125,7 @@ export function StaggerContainer({
           },
         },
       }}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>
@@ -134,6 +146,7 @@ export function StaggerItem({ children }: StaggerItemProps) {
           y: 0,
         },
       }}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>

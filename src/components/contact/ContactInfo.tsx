@@ -35,7 +35,7 @@ export default function ContactInfo() {
               <h3 className="text-lg font-semibold text-gray-900 mb-1">
                 Phone
               </h3>
-              <p className="text-gray-600">+1 (555) 123-4567</p>
+              <p className="text-gray-600">+20 01067815224</p>
               <p className="text-gray-600 text-sm">Mon-Fri, 9am-6pm EST</p>
             </div>
           </div>
@@ -52,7 +52,7 @@ export default function ContactInfo() {
                 Office
               </h3>
               <p className="text-gray-600">123 Tech Street</p>
-              <p className="text-gray-600">San Francisco, CA 94105</p>
+              <p className="text-gray-600">EGYPT, Cairo</p>
             </div>
           </div>
         </HoverScale>

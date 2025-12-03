@@ -1,4 +1,5 @@
-import { Activity, Users, MessageSquare, Clock } from "lucide-react";
+import Image from "next/image";
+import HeaderDash from "../dashboardLanding/Metrics";
 
 export default function DashboardPreview() {
   return (
@@ -31,29 +32,8 @@ export default function DashboardPreview() {
           {/* Dashboard Content */}
           <div className="p-8">
             {/* Metrics Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6 border border-blue-200">
-                <Activity className="w-6 h-6 text-blue-600 mb-2" />
-                <p className="text-gray-600 text-sm mb-1">Online Status</p>
-                <p className="text-2xl font-bold text-gray-900">47</p>
-              </div>
-              <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6 border border-green-200">
-                <Users className="w-6 h-6 text-green-600 mb-2" />
-                <p className="text-gray-600 text-sm mb-1">Chats Today</p>
-                <p className="text-2xl font-bold text-gray-900">156</p>
-              </div>
-              <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-6 border border-purple-200">
-                <MessageSquare className="w-6 h-6 text-purple-600 mb-2" />
-                <p className="text-gray-600 text-sm mb-1">Agents</p>
-                <p className="text-2xl font-bold text-gray-900">12</p>
-              </div>
-              <div className="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-6 border border-orange-200">
-                <Clock className="w-6 h-6 text-orange-600 mb-2" />
-                <p className="text-gray-600 text-sm mb-1">Avg Response</p>
-                <p className="text-2xl font-bold text-gray-900">2.3m</p>
-              </div>
-            </div>
 
+            <HeaderDash />
             {/* Two Column Layout */}
             <div className="grid md:grid-cols-2 gap-8">
               {/* Recent Conversations */}
@@ -64,24 +44,28 @@ export default function DashboardPreview() {
                 <div className="space-y-4">
                   {[
                     {
+                      img: "https://randomuser.me/api/portraits/women/44.jpg",
                       name: "Sarah Johnson",
                       msg: "5m ago",
-                      badge: "bg-green-100 text-green-800",
+                      badge: "bg-green-500 text-green-800",
                     },
                     {
+                      img: "https://randomuser.me/api/portraits/men/32.jpg",
                       name: "Mike Chen",
                       msg: "10m ago",
-                      badge: "bg-green-100 text-green-800",
+                      badge: "bg-green-500 text-green-800",
                     },
                     {
+                      img: "https://randomuser.me/api/portraits/women/65.jpg",
                       name: "Lisa Park",
                       msg: "15m ago",
-                      badge: "bg-yellow-100 text-yellow-800",
+                      badge: "bg-yellow-500 text-yellow-800",
                     },
                     {
+                      img: "https://randomuser.me/api/portraits/men/41.jpg",
                       name: "David Kim",
-                      msg: "Earlier today",
-                      badge: "bg-gray-100 text-gray-800",
+                      msg: "49m ago",
+                      badge: "bg-gray-500 text-gray-800",
                     },
                   ].map((agent, i) => (
                     <div
@@ -89,19 +73,25 @@ export default function DashboardPreview() {
                       className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full" />
-                        <div>
-                          <p className="font-medium text-gray-900 text-sm">
-                            {agent.name}
-                          </p>
-                          <p className="text-xs text-gray-500">{agent.msg}</p>
-                        </div>
+                        <Image
+                          src={agent.img}
+                          alt={agent.name}
+                          width={40}
+                          height={40}
+                          className="rounded-full object-cover"
+                        />
+
+                        <p className="font-medium text-gray-900 text-sm">
+                          {agent.name}
+                        </p>
                       </div>
-                      <span
-                        className={`text-xs px-2 py-1 rounded-full font-medium ${agent.badge}`}
-                      >
-                        {agent.name.split(" ")[0]}
-                      </span>
+                      <div className="flex items-center gap-1">
+                        <p className="text-xs text-gray-500">{agent.msg}</p>
+
+                        <div
+                          className={`text-xs py-2 px-2 rounded-full font-medium ${agent.badge}`}
+                        ></div>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -114,17 +104,39 @@ export default function DashboardPreview() {
                 </h3>
                 <div className="space-y-4">
                   {[
-                    { name: "Ana Rodriguez", satisfaction: 98 },
-                    { name: "Lisa Park", satisfaction: 96 },
-                    { name: "David Kim", satisfaction: 94 },
-                    { name: "Rachel Lee", satisfaction: 92 },
+                    {
+                      name: "Ana Rodriguez",
+                      satisfaction: 98,
+                      img: "https://randomuser.me/api/portraits/women/30.jpg",
+                    },
+                    {
+                      name: "Lisa Park",
+                      satisfaction: 80,
+                      img: "https://randomuser.me/api/portraits/women/5.jpg",
+                    },
+                    {
+                      name: "David Kim",
+                      satisfaction: 94,
+                      img: "https://randomuser.me/api/portraits/men/40.jpg",
+                    },
+                    {
+                      name: "Rachel Lee",
+                      satisfaction: 70,
+                      img: "https://randomuser.me/api/portraits/women/13.jpg",
+                    },
                   ].map((agent, i) => (
                     <div
                       key={i}
                       className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 bg-gradient-to-br from-purple-400 to-blue-500 rounded-full" />
+                        <Image
+                          src={agent.img}
+                          alt={agent.name}
+                          width={40}
+                          height={40}
+                          className="rounded-full object-cover"
+                        />
                         <p className="font-medium text-gray-900 text-sm">
                           {agent.name}
                         </p>

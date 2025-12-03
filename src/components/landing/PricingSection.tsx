@@ -24,8 +24,8 @@ export default function PricingSection() {
             All plans include a 14-day free trial. No credit card required.
           </p>
           <Link
-            href="/contact"
-            className="text-purple-600 font-bold hover:text-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-600 rounded px-2 py-1"
+            href="/contactus"
+            className="text-indigoCustom font-bold hover:text-purple-500 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-600 rounded px-2 py-1"
           >
             Questions? Contact our sales team →
           </Link>

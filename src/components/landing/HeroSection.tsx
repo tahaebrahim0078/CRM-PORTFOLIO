@@ -1,15 +1,14 @@
-"use client";
-
 import Link from "next/link";
-import { IoPersonCircleSharp } from "react-icons/io5";
 import {
   FadeIn,
   HoverScale,
   StaggerContainer,
   StaggerItem,
 } from "@/components/common/Animations";
+import VideoModal from "@/components/common/VideoModal";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import { MdSupportAgent } from "react-icons/md";
+import FloatingUserMessage from "../common/FloatingUserMessage";
 
 export default function HeroSection() {
   return (
@@ -31,23 +30,16 @@ export default function HeroSection() {
               </div>
 
               {/* CTA Buttons */}
-              <div className="flex gap-4 pt-4">
+              <div className="flex justify-start items-center gap-4 ">
                 <HoverScale>
                   <Link
-                    href="/signup"
-                    className="bg-white border-white border-2 text-indigoCustom px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-white"
+                    href="https://crm-dashboard-orcin.vercel.app/"
+                    className="bg-white border-white border-3 text-indigoCustom px-5 md:px-6 lg:px-8 md:py-4 py-3 rounded-lg font-semibold hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-white"
                   >
                     Start Free Trial
                   </Link>
                 </HoverScale>
-                <HoverScale>
-                  <Link
-                    href="/#dashboard"
-                    className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:text-indigoCustom hover:bg-white  transition focus:outline-none focus:ring-2 focus:ring-white"
-                  >
-                    Watch Demo
-                  </Link>
-                </HoverScale>
+                <VideoModal videoId="dQw4w9WgXcQ" title="ChatFlow Demo" />
               </div>
               {/* Feature List */}
 
@@ -80,7 +72,7 @@ export default function HeroSection() {
           {/* Right Side - Chat Preview */}
           <FadeIn direction="right" delay={0.2}>
             <div className="relative">
-              <div className="bg-white/10 bg-opacity-95 rounded-2xl p-6 shadow-2xl">
+              <div className="bg-white/10 bg-opacity-95 rounded-2xl py-12 p-6 shadow-2xl">
                 {/* Chat Messages */}
                 <div className="space-y-4">
                   {/* Bot Message */}
@@ -99,17 +91,7 @@ export default function HeroSection() {
                   </div>
 
                   {/* User Message */}
-                  <div className="flex justify-end gap-3">
-                    <div className="bg-indigoCustom rounded-xl text-white rounded-2xl px-4 py-2 max-w-xs">
-                      <p className="text-sm">I need help with my order</p>
-                    </div>
-                    <div
-                      className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center flex-shrink-0"
-                      aria-hidden="true"
-                    >
-                      <IoPersonCircleSharp className="w-5 h-5 text-white" />
-                    </div>
-                  </div>
+                  <FloatingUserMessage />
 
                   {/* Bot Response */}
                   <div className="flex gap-3">

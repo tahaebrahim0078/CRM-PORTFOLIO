@@ -1,6 +1,4 @@
-﻿"use client";
-
-import Navbar from "@/components/common/Navbar";
+﻿import Navbar from "@/components/common/Navbar";
 import ContactHeader from "@/components/contact/ContactHeader";
 import ContactInfo from "@/components/contact/ContactInfo";
 import ContactForm from "@/components/contact/ContactForm";

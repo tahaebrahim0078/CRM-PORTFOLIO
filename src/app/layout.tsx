@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Footer from "@/components/common/Footer";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -57,12 +58,13 @@ export const metadata: Metadata = {
     description:
       "ChatFlow is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration.",
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
@@ -81,12 +83,7 @@ export default function RootLayout({
         role="application"
       >
         <main role="main">{children}</main>
-        <footer
-          role="contentinfo"
-          className="bg-gray-900 text-white p-4 text-center"
-        >
-          <p>&copy; 2025 ChatFlow. All rights reserved.</p>
-        </footer>
+        <Footer />
       </body>
     </html>
   );
