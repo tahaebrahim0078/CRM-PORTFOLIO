@@ -10,6 +10,7 @@ interface FadeInProps {
   direction?: "up" | "down" | "left" | "right";
 }
 
+// Fade-in animation with optional direction, delay, and duration
 export function FadeIn({
   children,
   delay = 0.2,
@@ -34,10 +35,7 @@ export function FadeIn({
       initial="hidden"
       animate="visible"
       variants={variants}
-      transition={{
-        duration,
-        delay,
-      }}
+      transition={{ duration, delay }}
       suppressHydrationWarning
     >
       {children}
@@ -50,6 +48,7 @@ interface ScaleInProps {
   delay?: number;
 }
 
+// Simple scale-in animation
 export function ScaleIn({ children, delay = 0 }: ScaleInProps) {
   return (
     <motion.div
@@ -68,6 +67,7 @@ interface HoverScaleProps {
   scale?: number;
 }
 
+// Hover animation that slightly scales the element
 export function HoverScale({ children, scale = 1.03 }: HoverScaleProps) {
   return (
     <motion.div
@@ -85,6 +85,7 @@ interface CountUpProps {
   value: number;
 }
 
+// Simple count-up display animation
 export function CountUp({ value }: CountUpProps) {
   return (
     <motion.div
@@ -108,6 +109,7 @@ interface StaggerContainerProps {
   staggerDelay?: number;
 }
 
+// Container that triggers staggered child animations
 export function StaggerContainer({
   children,
   staggerDelay = 0.1,
@@ -120,9 +122,7 @@ export function StaggerContainer({
         hidden: { opacity: 0 },
         visible: {
           opacity: 1,
-          transition: {
-            staggerChildren: staggerDelay,
-          },
+          transition: { staggerChildren: staggerDelay },
         },
       }}
       suppressHydrationWarning
@@ -136,15 +136,13 @@ interface StaggerItemProps {
   children: ReactNode;
 }
 
+// Animated item for use inside StaggerContainer
 export function StaggerItem({ children }: StaggerItemProps) {
   return (
     <motion.div
       variants={{
         hidden: { opacity: 0, y: 20 },
-        visible: {
-          opacity: 1,
-          y: 0,
-        },
+        visible: { opacity: 1, y: 0 },
       }}
       suppressHydrationWarning
     >

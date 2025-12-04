@@ -141,7 +141,7 @@ export default function AboutUsPage() {
                       alt={member.name}
                       fill
                       className="rounded-full object-cover"
-                      sizes="96px" // بما أن parent 24*24 (96px)
+                      sizes="96px" 
                     />
                   </div>
 

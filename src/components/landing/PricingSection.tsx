@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PricingGrid from "./PricingGrid";
+import PricingGrid from "../pricingGrid/PricingGrid";
 
 export default function PricingSection() {
   return (

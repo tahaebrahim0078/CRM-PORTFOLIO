@@ -53,16 +53,17 @@ export default function VideoModal({
             </div>
 
             {/* Video Container */}
-            <div className="flex-1 bg-black w-full overflow-hidden">
-              <iframe
-                className="w-full h-full"
-                src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1`}
-                title={title}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                suppressHydrationWarning
-              />
+            <div className="relative w-full flex-1 bg-black overflow-hidden">
+              <div className="relative w-full pb-[56.25%]">
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full"
+                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1`}
+                  title={title}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
             </div>
           </div>
         </div>

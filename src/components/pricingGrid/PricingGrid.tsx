@@ -102,7 +102,7 @@ export default function PricingGrid() {
                 <ul className="mt-6 space-y-3 text-sm text-gray-600">
                   {plan.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-500 mt-1 flex-shrink-0" />
+                      <Check className="w-4 h-4 text-green-500 mt-1 shrink-0" />
                       <span>{f}</span>
                     </li>
                   ))}
@@ -112,8 +112,8 @@ export default function PricingGrid() {
                   <button
                     className={`w-full cursor-pointer ${
                       plan.popular
-                        ? "bg-gradient-to-br from-indigoCustom to-purpleCustom text-white"
-                        : "bg-[var(--color-footer)] text-white"
+                        ? "bg-linear-to-br from-indigoCustom to-purpleCustom text-white"
+                        : "bg-(--color-footer) text-white"
                     } px-4 py-2 rounded-lg font-semibold`}
                   >
                     {plan.cta}

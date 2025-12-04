@@ -3,7 +3,7 @@ import { IoChatboxEllipsesOutline } from "react-icons/io5";
 import { IoCheckmarkCircleSharp } from "react-icons/io5";
 import { FaUsers } from "react-icons/fa6";
 
-// 🟦 ثابت — لا يعمل rerender ولا performance cost
+//  performance cost
 const colorMap = {
   blue: {
     bg: "bg-blue-50",

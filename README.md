@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ChatFlow CRM Portfolio
 
-## Getting Started
+A modern, responsive SaaS portfolio website for ChatFlow CRM built with Next.js, Tailwind CSS, and TypeScript.
 
-First, run the development server:
+##  Features
+
+-  Landing page with hero section & CTA buttons
+-  Video modal for demos
+-  Team & About page (SSG)
+-  Contact form (Formspree integration)
+-  Dashboard preview & analytics
+-  Pricing section
+-  Fully responsive & mobile-friendly
+-  Smooth animations (Framer Motion)
+-  SEO optimized
+-  Accessible components
+
+##  Tech Stack
+
+- **Next.js 14+** (App Router)
+- **TypeScript**
+- **Tailwind CSS**
+- **Framer Motion**
+- **Zustand** (state management)
+- **recharts** (analytics)
+- **Cloudinary** (image hosting)
+
+##  Quick Start
+
+### Prerequisites
+- Node.js 18+
+- npm or pnpm
+
+### Installation
 
 ```bash
+# Clone repo
+git clone <repo-url>
+cd CRMport
+
+# Install dependencies
+npm install
+
+# Run dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+##  Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/
++-- app/
+�   +-- page.tsx              # Landing page
+�   +-- layout.tsx
+�   +-- globals.css
+�   +-- aboutus/page.tsx      # About page
+�   +-- contact/page.tsx      # Contact page
++-- components/
+�   +-- common/               # Navbar, Footer, Modals
+�   +-- landing/              # Hero, Features, Pricing
++-- store/
+    +-- authStore.ts          # Auth state
+```
 
-## Learn More
+##  Available Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # Development server
+npm run build    # Production build
+npm run start    # Start production
+npm run lint     # Lint code
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+##  Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Page | Route | Details |
+|------|-------|---------|
+| Home | / | Hero, features, analytics, pricing |
+| About | /aboutus | Company info & team |
+| Contact | /contact | Contact form |
 
-## Deploy on Vercel
+##  Styling
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Utility-first with **Tailwind CSS**
+- Responsive mobile-first design
+- CSS variables for consistency
+- Dark mode ready
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##  Images
+
+Images are hosted on **Cloudinary** for optimal performance and CDN delivery.
+
+##  Responsive
+
+-  Mobile (320px+)
+-  Tablet (768px+)
+-  Desktop (1024px+)
+
+##  Browser Support
+
+- Chrome, Firefox, Safari, Edge (latest versions)
+
+##  Support
+
+Questions Contact: info@chatflow.com
+
+---
+
+**Made with  by Taha Ibrahim**

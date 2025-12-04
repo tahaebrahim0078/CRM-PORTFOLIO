@@ -5,10 +5,10 @@ import {
   StaggerContainer,
   StaggerItem,
 } from "@/components/common/Animations";
-import VideoModal from "@/components/common/VideoModal";
 import { RiCheckboxCircleFill } from "react-icons/ri";
 import { MdSupportAgent } from "react-icons/md";
-import FloatingUserMessage from "../common/FloatingUserMessage";
+import FloatingUserMessage from "../HeroCompoment/FloatingUserMessage";
+import VideoModal from "../HeroCompoment/VideoModal";
 
 export default function HeroSection() {
   return (
@@ -39,7 +39,7 @@ export default function HeroSection() {
                     Start Free Trial
                   </Link>
                 </HoverScale>
-                <VideoModal videoId="dQw4w9WgXcQ" title="ChatFlow Demo" />
+                <VideoModal videoId="cDDrisx_3CI" title="ChatFlow Demo" />
               </div>
               {/* Feature List */}
 

@@ -6,11 +6,11 @@ import { useState } from "react";
 
 function NavMopile() {
   const [isOpen, setIsOpen] = useState(false);
-
+  // Toggle mobile menu
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  // Close mobile menu
   const closeMenu = () => {
     setIsOpen(false);
   };

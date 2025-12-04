@@ -14,7 +14,9 @@ interface ContactFormProps {
   formspreeId?: string;
 }
 
+// Contact form component with optional custom submit handler
 export default function ContactForm({ onSubmit }: ContactFormProps) {
+  // Local form state
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -24,6 +26,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     isSubmitted: false,
   });
 
+  // Update form inputs
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -34,6 +37,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
     }));
   };
 
+  // Handle form submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormState((prev) => ({ ...prev, isSubmitting: true }));
@@ -46,14 +50,15 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
         message: formState.message,
       };
 
+      // If user provided a custom submit function, use it
       if (onSubmit) {
         await onSubmit(formData);
+
+        // Otherwise send data to Formspree
       } else {
         const response = await fetch(`https://formspree.io/f/xwpgbpnw`, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(formData),
         });
 
@@ -62,6 +67,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
         }
       }
 
+      // Reset form after success
       setFormState({
         name: "",
         email: "",
@@ -71,6 +77,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
         isSubmitted: true,
       });
 
+      // Hide success message after 5 seconds
       setTimeout(() => {
         setFormState((prev) => ({ ...prev, isSubmitted: false }));
       }, 5000);
@@ -83,23 +90,27 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
 
   return (
     <div className="md:col-span-2">
+      {/* Fade-in entry animation */}
       <FadeIn direction="right" delay={0.2}>
         <div className="bg-gray-50 rounded-2xl p-8 md:p-10">
+          {/* Form title */}
           <h2 className="text-2xl font-bold text-gray-900 mb-8">
             Send us a Message
           </h2>
 
+          {/* Success message */}
           {formState.isSubmitted && (
             <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
               <p className="text-green-700 font-semibold">
-                ✓ Thank you! Your message has been sent successfully. We&apos;ll
+                Thank you! Your message has been sent successfully. We&apos;ll
                 get back to you soon.
               </p>
             </div>
           )}
 
+          {/* Form fields */}
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Name */}
+            {/* Name field */}
             <div>
               <label
                 htmlFor="name"
@@ -119,7 +130,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
               />
             </div>
 
-            {/* Email */}
+            {/* Email field */}
             <div>
               <label
                 htmlFor="email"
@@ -139,7 +150,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
               />
             </div>
 
-            {/* Company */}
+            {/* Optional company field */}
             <div>
               <label
                 htmlFor="company"
@@ -158,7 +169,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
               />
             </div>
 
-            {/* Message */}
+            {/* Message textarea */}
             <div>
               <label
                 htmlFor="message"
@@ -178,7 +189,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
               />
             </div>
 
-            {/* Submit Button */}
+            {/* Submit button with hover animation */}
             <HoverScale>
               <button
                 type="submit"
@@ -191,6 +202,7 @@ export default function ContactForm({ onSubmit }: ContactFormProps) {
             </HoverScale>
           </form>
 
+          {/* Privacy note */}
           <p className="text-sm text-gray-500 text-center mt-6">
             We respect your privacy. Your information will never be shared.
           </p>

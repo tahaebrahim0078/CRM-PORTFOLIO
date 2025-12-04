@@ -63,7 +63,7 @@ export default function Navbar() {
               Start Free Trial
             </Link>
           </div>
-          {/* Mobile (moved) */}
+          {/* Mobile */}
           <NavMobile />
         </div>
       </div>
