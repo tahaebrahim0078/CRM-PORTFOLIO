@@ -19,8 +19,8 @@ export default function ContactInfo() {
               <h3 className="text-lg font-semibold text-gray-900 mb-1">
                 Email
               </h3>
-              <p className="text-gray-600">support@chatflow.com</p>
-              <p className="text-gray-600">sales@chatflow.com</p>
+              <p className="text-gray-600">support@connector.com</p>
+              <p className="text-gray-600">sales@connector.com</p>
             </div>
           </div>
         </HoverScale>

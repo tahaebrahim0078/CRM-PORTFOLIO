@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "ChatFlow - SaaS CRM Dashboard Platform",
-    template: "%s | ChatFlow",
+    default: "Connector - SaaS CRM Dashboard Platform",
+    template: "%s | Connector",
   },
   description:
-    "ChatFlow is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration for businesses of all sizes.",
+    "Connector is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration for businesses of all sizes.",
   keywords: [
     "CRM",
     "chat",
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "multi-agent",
     "analytics",
   ],
-  authors: [{ name: "ChatFlow" }],
-  creator: "ChatFlow",
-  publisher: "ChatFlow",
+  authors: [{ name: "Connector" }],
+  creator: "Connector",
+  publisher: "Connector",
   robots: {
     index: true,
     follow: true,
@@ -39,24 +39,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://chatflow.app",
-    title: "ChatFlow - SaaS CRM Dashboard Platform",
+    url: "https://connectorcrm.com",
+    title: "Connector - SaaS CRM Dashboard Platform",
     description:
-      "ChatFlow is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration.",
+      "Connector is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration.",
     images: [
       {
-        url: "https://chatflow.app/og-image.jpg",
+        url: "https://connectorcrm.com/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ChatFlow - SaaS CRM Dashboard",
+        alt: "Connector - SaaS CRM Dashboard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ChatFlow - SaaS CRM Dashboard Platform",
+    title: "Connector - SaaS CRM Dashboard Platform",
     description:
-      "ChatFlow is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration.",
+      "Connector is a powerful SaaS CRM dashboard platform with multi-agent support, real-time analytics, and advanced chat integration.",
   },
 };
 
@@ -75,7 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://chatflow.app" />
+        <link rel="canonical" href="https://Connector.app" />
         <meta name="theme-color" content="#7c3aed" />
       </head>
       <body

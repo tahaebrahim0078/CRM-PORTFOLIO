@@ -5,12 +5,12 @@ import Image from "next/image";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "About Us | ChatFlow CRM",
+  title: "About Us | Connector CRM",
   description:
-    "Learn about ChatFlow CRM, our mission, team, and values. We're building the future of customer communication.",
+    "Learn about Connector CRM, our mission, team, and values. We're building the future of customer communication.",
   openGraph: {
-    title: "About Us | ChatFlow CRM",
-    description: "Learn about ChatFlow CRM, our mission, team, and values.",
+    title: "About Us | Connector CRM",
+    description: "Learn about Connector CRM, our mission, team, and values.",
     type: "website",
   },
 };
@@ -43,7 +43,7 @@ export default function AboutUsPage() {
         <div className="bg-linear-to-br from-purple-50 to-blue-50 py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-              About ChatFlow CRM
+              About Connector CRM
             </h1>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               We&apos;re on a mission to revolutionize customer communication
@@ -61,7 +61,7 @@ export default function AboutUsPage() {
                   Our Mission
                 </h2>
                 <p className="text-lg text-gray-600 mb-4">
-                  At ChatFlow CRM, we believe that exceptional customer service
+                  At Connector CRM, we believe that exceptional customer service
                   shouldn&apos;t be complicated. We&apos;re building tools that
                   empower businesses of all sizes to deliver world-class support
                   through intelligent, multi-agent chat systems.
@@ -186,7 +186,7 @@ export default function AboutUsPage() {
               Join us on our journey
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-              Experience the future of customer communication with ChatFlow CRM.
+              Experience the future of customer communication with Connector CRM.
             </p>
             <div className="flex gap-4 justify-center">
               <Link

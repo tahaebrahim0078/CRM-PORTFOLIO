@@ -38,7 +38,7 @@ export default function Footer() {
     { icon: Facebook, href: "#", label: "Facebook" },
     { icon: Twitter, href: "#", label: "Twitter" },
     { icon: Linkedin, href: "#", label: "LinkedIn" },
-    { icon: Mail, href: "mailto:Chat@chatflow.app", label: "Email" },
+    { icon: Mail, href: "mailto:Chat@connector.app", label: "Email" },
   ];
 
   return (
@@ -51,7 +51,7 @@ export default function Footer() {
             <div className="md:col-span-1">
               <Link href="/" className="block mb-4">
                 <h2 className="text-2xl font-bold bg-linear-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-                  ChatFlow
+                  Connector
                 </h2>
               </Link>
               <p className="text-gray-400 text-sm leading-relaxed mb-6">
@@ -77,10 +77,10 @@ export default function Footer() {
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 shrink-0 text-indigo-400" />
                   <a
-                    href="mailto:Chat@chatflow.app"
+                    href="mailto:Chat@connector.app"
                     className="hover:text-indigo-400 transition"
                   >
-                    Chat@chatflow.app
+                    Chat@connector.app
                   </a>
                 </div>
               </div>
@@ -143,7 +143,7 @@ export default function Footer() {
 
             {/* Bottom Footer */}
             <div className="flex items-center justify-between flex-wrap gap-4 pt-6 border-t border-gray-800 text-xs text-gray-500">
-              <p>&copy; {currentYear} ChatFlow. All rights reserved.</p>
+              <p>&copy; {currentYear} Connector. All rights reserved.</p>
               <div className="flex gap-4">
                 <Link href="#" className="hover:text-indigo-400 transition">
                   Privacy

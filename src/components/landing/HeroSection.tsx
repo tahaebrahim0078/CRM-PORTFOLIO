@@ -12,9 +12,9 @@ import VideoModal from "../HeroCompoment/VideoModal";
 
 export default function HeroSection() {
   return (
-    <div className="bg-gradient-to-br from-indigoCustom to-purpleCustom text-white py-16 md:py-44">
+    <div className="bg-gradient-to-br from-indigoCustom to-purpleCustom text-white py-16 min-[810px]:py-44">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid min-[810px]:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <FadeIn direction="left">
             <div className="space-y-8">
@@ -33,13 +33,13 @@ export default function HeroSection() {
               <div className="flex justify-start items-center gap-4 ">
                 <HoverScale>
                   <Link
-                    href="https://crm-dashboard-orcin.vercel.app/"
+                    href="https://valahala-dashboard.vercel.app/"
                     className="bg-white border-white border-3 text-indigoCustom px-5 md:px-6 lg:px-8 md:py-4 py-3 rounded-lg font-semibold hover:bg-gray-100 transition focus:outline-none focus:ring-2 focus:ring-white"
                   >
                     Start Free Trial
                   </Link>
                 </HoverScale>
-                <VideoModal videoId="cDDrisx_3CI" title="ChatFlow Demo" />
+                <VideoModal videoId="cDDrisx_3CI" title="Connector Demo" />
               </div>
               {/* Feature List */}
 

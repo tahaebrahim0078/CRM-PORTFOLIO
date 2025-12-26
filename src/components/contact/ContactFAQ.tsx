@@ -24,7 +24,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can I get help with integration?",
     answer:
-      "Absolutely! Our technical team can assist with API integration, webhooks, and custom implementations. Reach out to support@chatflow.com.",
+      "Absolutely! Our technical team can assist with API integration, webhooks, and custom implementations. Reach out to support@connector.com.",
   },
 ];
 

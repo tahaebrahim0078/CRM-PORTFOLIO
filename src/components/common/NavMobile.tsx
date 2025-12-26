@@ -66,7 +66,7 @@ export default function NavMobile() {
 
           <div className="px-6 pt-2">
             <Link
-              href="https://crm-dashboard-orcin.vercel.app/"
+              href="https://valahala-dashboard.vercel.app/"
               className="block bg-gradient-to-br from-indigoCustom to-purpleCustom text-white px-6 py-3 rounded-lg font-medium text-center focus:outline-none focus:ring-2 focus:ring-purple-600"
               onClick={closeMenu}
               role="menuitem"

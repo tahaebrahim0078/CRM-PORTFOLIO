@@ -6,10 +6,10 @@ import AnalyticsSection from "@/components/landing/AnalyticsSection";
 import PricingSection from "@/components/landing/PricingSection";
 
 export const metadata = {
-  title: "Home - ChatFlow",
+  title: "Home - Connector",
   description: "Smart Chat Solution for Every Business",
   openGraph: {
-    title: "ChatFlow - SaaS CRM Dashboard Platform",
+    title: "Connector - SaaS CRM Dashboard Platform",
     description: "Smart Chat Solution for Every Business",
     type: "website",
   },

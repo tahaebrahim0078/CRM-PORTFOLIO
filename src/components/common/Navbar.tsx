@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { RiChatSmileAiLine } from "react-icons/ri";
 import NavMobile from "@/components/common/NavMobile";
-
+import Image from "next/image";
+import logo from "../../../public/ConnectorIcon.png";
 export default function Navbar() {
   return (
     <nav
@@ -16,15 +16,19 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center gap-2  rounded-lg"
-            aria-label="ChatFlow Home"
+            className="flex items-center justify-center  gap-2  rounded-lg"
+            aria-label="Connector Home"
           >
-            <div className="w-8 h-8 bg-gradient-to-br from-indigoCustom to-purpleCustom rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg" aria-hidden="true">
-                <RiChatSmileAiLine />
-              </span>
+            <div className="w-10 h-10 relative">
+              <Image
+                src={logo}
+                alt="Connector Logo"
+                fill
+                className="object-contain rounded-lg"
+                priority
+              />
             </div>
-            <span className="font-bold text-xl text-gray-900">ChatFlow</span>
+            <span className="font-bold text-xl text-gray-900">Connector</span>
           </Link>
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
@@ -56,7 +60,7 @@ export default function Navbar() {
           {/* Right Actions */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              href="https://crm-dashboard-orcin.vercel.app/"
+              href="https://valahala-dashboard.vercel.app/"
               className="bg-gradient-to-br from-indigoCustom to-purpleCustom text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-purple-600"
               aria-label="Start Free Trial"
             >
