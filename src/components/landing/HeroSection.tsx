@@ -12,7 +12,7 @@ import VideoModal from "../HeroCompoment/VideoModal";
 
 export default function HeroSection() {
   return (
-    <div className="bg-gradient-to-br from-indigoCustom to-purpleCustom text-white py-16 min-[810px]:py-44">
+    <div className="bg-linear-to-br from-indigoCustom to-purpleCustom text-white py-16 min-[810px]:py-44">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid min-[810px]:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -39,7 +39,10 @@ export default function HeroSection() {
                     Start Free Trial
                   </Link>
                 </HoverScale>
-                <VideoModal videoId="cDDrisx_3CI" title="Connector Demo" />
+                <VideoModal
+                  videoPath="/ConnectorVideoTesting.mp4"
+                  title="Connector Demo"
+                />
               </div>
               {/* Feature List */}
 
@@ -78,7 +81,7 @@ export default function HeroSection() {
                   {/* Bot Message */}
                   <div className="flex gap-3">
                     <div
-                      className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0"
+                      className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shrink-0"
                       aria-hidden="true"
                     >
                       <MdSupportAgent className="w-5 h-5 text-white" />
@@ -96,7 +99,7 @@ export default function HeroSection() {
                   {/* Bot Response */}
                   <div className="flex gap-3">
                     <div
-                      className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0"
+                      className="w-8 h-8 rounded-full bg-green-500 flex items-center justify-center shrink-0"
                       aria-hidden="true"
                     >
                       <MdSupportAgent className="w-5 h-5 text-white" />

@@ -22,7 +22,7 @@ const plans: Plan[] = [
     id: "basic",
     name: "Starter",
     subTitle: "Perfect for small teams",
-    price: "$29/mo",
+    price: "$0/mo",
     features: [
       "Chat widget",
       "Up to 3 agents",

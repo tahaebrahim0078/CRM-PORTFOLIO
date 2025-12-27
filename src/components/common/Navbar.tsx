@@ -61,7 +61,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <Link
               href="https://valahala-dashboard.vercel.app/"
-              className="bg-gradient-to-br from-indigoCustom to-purpleCustom text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-purple-600"
+              className="bg-linear-to-br from-indigoCustom to-purpleCustom text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg transition focus:outline-none focus:ring-2 focus:ring-purple-600"
               aria-label="Start Free Trial"
             >
               Start Free Trial

@@ -4,13 +4,13 @@ import { useState } from "react";
 import { X, Play } from "lucide-react";
 
 interface VideoModalProps {
-  videoId: string;
   title?: string;
+  videoPath?: string;
 }
 
 export default function VideoModal({
-  videoId,
   title = "Demo Video",
+  videoPath = "/videos/demo.mp4",
 }: VideoModalProps) {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,7 +45,7 @@ export default function VideoModal({
               <h2 className="text-white font-semibold text-lg">{title}</h2>
               <button
                 onClick={() => setIsOpen(false)}
-                className="p-2 hover:bg-gray-700 cursor-pointer  rounded-lg transition"
+                className="p-2 hover:bg-gray-700 cursor-pointer rounded-lg transition"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5 text-gray-400 hover:text-white" />
@@ -54,16 +54,13 @@ export default function VideoModal({
 
             {/* Video Container */}
             <div className="relative w-full flex-1 bg-black overflow-hidden">
-              <div className="relative w-full pb-[56.25%]">
-                <iframe
-                  className="absolute top-0 left-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1`}
-                  title={title}
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+              <video
+                src={videoPath}
+                className="w-full h-full object-contain bg-black"
+                controls
+                autoPlay
+                playsInline
+              />
             </div>
           </div>
         </div>

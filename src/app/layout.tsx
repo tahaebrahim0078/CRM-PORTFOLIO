@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Footer from "@/components/common/Footer";
 import "./globals.css";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -84,6 +85,13 @@ export default function RootLayout({
       >
         <main role="main">{children}</main>
         <Footer />
+
+        {/* Connector Widget */}
+        <Script
+          src="https://valahala-widget.onrender.com/valaha-widget.iife.js"
+          strategy="afterInteractive" // Load after page is interactive
+          data-public-key="VALAHA-KEY-123456"
+        />
       </body>
     </html>
   );
